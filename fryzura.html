@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Fryzjerstwo</title>
+
+    <link rel="stylesheet" href="styl8.css">
+
+    <script type="text/javascript">
+        
+        function przelicz() {
+            var radio1 = document.getElementById("radio1").checked
+            var radio2 = document.getElementById("radio2").checked
+            var radio3 = document.getElementById("radio3").checked
+            var radio4 = document.getElementById("radio4").checked
+
+            var wynik = document.getElementById("wynik")
+
+            var submit = document.getElementById("submit")
+
+            krotkie = 25; srednie = 30; poldlugie = 35; dlugie = 40;
+
+            promocja = 10;
+
+            cena = 0;
+
+            if ((radio1)||(radio2)||(radio3)||(radio4)) {
+                if (radio1) {
+                    cena = krotkie - promocja;
+                } else if (radio2) {
+                    cena = srednie - promocja;
+                } else if (radio3) {
+                    cena = poldlugie - promocja;
+                } else if (radio4) {
+                    cena = dlugie - promocja;
+                }
+
+                wynik.innerHTML = "cena promocyjna: "+cena;
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <main>
+        <div id="left">
+            <div id="left_top">
+                <h1><a href="index.html">SALON FRYZJERSKI</a></h1>
+            </div>
+            <div id="left_middle">
+                <h2>PROMOCJA!</h2>
+                <input type="radio" name="check" id="radio1" class="radio">
+                <label for="radio">Krótkie</label><br>
+                <input type="radio" name="check" id="radio2" class="radio">
+                <label for="radio">Średnie</label><br>
+                <input type="radio" name="check" id="radio3" class="radio">
+                <label for="radio">Półdługie</label><br>
+                <input type="radio" name="check" id="radio4" class="radio">
+                <label for="radio">Długie</label><br>
+                <input type="submit" name="submit" id="submit" value="Odkryj promocję" onclick="przelicz()">
+                <p id="wynik"></p>
+            </div>
+            <div id="left_bottom">
+                <p>Witaj! Miło nam, że odwiedziłeś nasz salon. Sprawdź promocje!</p>
+                <h4>444 555 666</h4>
+            </div>
+        </div>
+
+        <div id="right">
+            <div id="right_top">
+                <h4><a href="fryzura.html">Ceny strzyżenia</a></h4>
+
+                <table>
+                    <tr>
+                        <th>Długość włosów</th>
+                        <th>Cena</th>
+                    </tr>
+                    <tr>
+                        <td>Krótkie</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Średnie</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>Podługie</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>Długie</td>
+                        <td>40</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="right_bottom">
+                <img src="obraz1.jpg" alt="Fryzjerka">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Autor: 0000000000</p>
+    </footer>
+</body>
+</html>
